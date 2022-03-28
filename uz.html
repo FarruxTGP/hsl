@@ -6,155 +6,185 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HSL</title>
-    <link rel="stylesheet" href="../assets/css/main.css">
+
+
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/xcode.min.css" />
+
+    <link rel="stylesheet" href="dist/css/bootstrap-select-country.min.css" />
+
+
+
+
+    <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide-core.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <div class="fixed">
-                <nav>
-                    <div class="logo">
-                        <img src="../assets/img/logo.svg" alt="">
-                    </div>
-                    <ul>
-                        <li>
-                            <a href="#home">
-                                Bosh sahifa
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#about">
-                                Haqimizda
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#service">
-                                Xizmatlar
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#numbers">
-                                Raqamlarda
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#reviews">
-                                Reviews
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#contact">
-                                Bog'lanish
-                            </a>
-                        </li>
-                        <li>
-                            <div class="dropdown">
-                                <button class="dropbtn">
-                                    <img  onclick="myFunction()" class="dropbtn" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/1000px-Flag_of_Uzbekistan.svg.png"
-                                        alt=""></button>
-                                <div id="myDropdown" class="dropdown-content">
-                                    <a href="/">
-                                        <img class="dropbtn"
-                                            src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1200px-Flag_of_the_United_Kingdom.svg.png"
-                                            alt="">
-                                    </a>
+
+    <div class="over__hidden">
+        <div class="containerch">
+            <header>
+                <div class="fixed">
+                    <nav>
+                        <div class="logo">
+                            <img src="assets/img/logo.png" alt="">
+                        </div>
+                        <button id="toggle">
+                            ☰
+                        </button>
+                        <ul>
+                            <li>
+                                <a href="#home">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#about">
+                                    About us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#service">
+                                    Service
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#numbers">
+                                    Numbers
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#reviews">
+                                    Reviews
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#contact">
+                                    Contact
+                                </a>
+                            </li>
+                            <li>
+                                <div class="dropdown">
+                                    <button class="dropbtn"><img class="dropbtn" onclick="myFunction()"
+                                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Flag_of_Uzbekistan.svg/1000px-Flag_of_Uzbekistan.svg.png"
+                                            alt=""></button>
+                                    <div id="myDropdown" class="dropdown-content">
+                                        <a href="/ru.html"><img
+                                                src="https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg"
+                                                alt=""></a>
+                                        <a href="/">
+                                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1200px-Flag_of_the_United_Kingdom.svg.png"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <a href="tel: +998 95  555 55 55" class="btn">
+                            <img src="./assets/img/ca.svg" alt="">
+                            <span>+998 95 555 55 55<br> <br> <small>Bepul konsultatsiya</small></span>
+
+                        </a>
+                    </nav>
+                </div>
+                <div class="banner" id="home">
+                    <div class="item__banner">
+                        <form>
+                            <h1>Calculate Price <img src="assets/img/fire.svg" class="fire" alt=""></h1>
+                            <div class="select__item">
+                                <label>
+                                    From
+                                    <select id="from" class="selectpicker countrypicker" data-flag="true"></select>
+                                </label>
+                            </div>
+                            <div class="select__item">
+                                <label for="">
+                                    To
+                                </label>
+                                <select id="to" class="selectpicker countrypicker" data-flag="true"></select>
+                            </div>
+                            <div class="select__item">
+                                <label for="">
+                                    Volume
+                                </label>
+                                <input type="number" id="volume" value="1" required placeholder="">
+                            </div>
+                            <button type="button" class="btn" id="open__modal">
+                                FIND MY SPACE
+                            </button>
+                            <div class="modal__item" id="modal__item">
+                                <div class="modal__body">
+                                    <h1>Raqamingizni qoldiring</h1>
+                                    <div class="input__block">
+                                        <label for="name">Ismingiz</label>
+                                        <input type="text" id="name" required placeholder="">
+                                    </div>
+                                    <div class="input__block">
+                                        <label for="phonenumber">Telefon raqamingiz</label>
+                                        <input type="text" id="phonenumber" required placeholder="">
+                                    </div>
+                                    <div id="error">
+                                        Yuqorida xatolik bor
+                                    </div>
+                                    <button class="btn" type="button" onclick="mysubmit();">OK </button>
                                 </div>
                             </div>
-                        </li>
-                    </ul>
-                    <a href="tel: +998 95  555 55 55">+998 95 555 55 55</a>
-                </nav>
-            </div>
-            <div class="banner" id="home">
-                <div class="item__banner">
-                    <form action="#">
-                        <h1>Calculate Price <img src="../assets/img/fire.svg" class="fire" alt=""></h1>
-                        <div class="select__item">
-                            <label for="">
-                                From
-                            </label>
-                            <select name="" id="">
-                                <option value="Malang, Indonesia">Malang, Indonesia</option>
-                                <option value="Malang, Indonesia">Malang, Indonesia</option>
-                                <option value="Malang, Indonesia">Malang, Indonesia</option>
-                                <option value="Malang, Indonesia">Malang, Indonesia</option>
-                            </select>
-                        </div>
-                        <div class="select__item">
-                            <label for="">
-                                To
-                            </label>
-                            <select name="" id="">
-                                <option value="Malang, Indonesia">Malang, Indonesia</option>
-                                <option value="Malang, Indonesia">Malang, Indonesia</option>
-                                <option value="Malang, Indonesia">Malang, Indonesia</option>
-                                <option value="Malang, Indonesia">Malang, Indonesia</option>
-                            </select>
-                        </div>
-                        <div class="select__item">
-                            <label for="">
-                                Volume
-                            </label>
-                            <select name="" id="">
-                                <option value="Malang, Indonesia">Malang, Indonesia</option>
-                                <option value="Malang, Indonesia">Malang, Indonesia</option>
-                                <option value="Malang, Indonesia">Malang, Indonesia</option>
-                                <option value="Malang, Indonesia">Malang, Indonesia</option>
-                            </select>
-                        </div>
-                        <button class="btn">
-                            FIND MY SPACE
-                        </button>
-                    </form>
+                        </form>
+                    </div>
+                    <div class="item__banner">
+                        <h1>
+                            <span>LOGISTIC</span>
+                            <br>
+                            SOLU <br> TIONS
+                        </h1>
+                        <img src="assets/img/air.png" alt="air" class="air">
+                    </div>
                 </div>
-                <div class="item__banner">
-                    <h1>
-                        <span>LOGISTIC</span>
-                        <br>
-                        SOLU <br> TIONS
-                    </h1>
-                    <img src="../assets/img/air.png" alt="air" class="air">
+                <div class="haver">
+                    we have
                 </div>
-            </div>
-            <div class="haver">
-                we have
-            </div>
-            <div class="number__cards aos-init aos-animate" data-aos="fade-up">
-                <div class="n__card">
-                    <h1>01</h1>
-                    <h3>HIGH <br> SPEED <img src="../assets/img/fire.svg" class="fire" alt=""></h3>
+                <div class="number__cards aos-init aos-animate" data-aos="fade-up">
+                    <div class="n__card">
+                        <h1>01</h1>
+                        <h3>HIGH <br> SPEED <img src="assets/img/fire.svg" class="fire" alt=""></h3>
+                    </div>
+                    <div class="n__card">
+                        <h1>02</h1>
+                        <h3>17 YILLIK <br> TAJRIBA <img src="assets/img/olov.svg" class="fire" alt=""></h3>
+                    </div>
+                    <div class="n__card">
+                        <h1>03</h1>
+                        <h3>HIGH <br> SPEED <img src="assets/img/fire.svg" class="fire" alt=""></h3>
+                    </div>
+                    <div class="n__card">
+                        <h1>04</h1>
+                        <h3>HIGH <br> SPEED <img src="assets/img/fire.svg" class="fire" alt=""></h3>
+                    </div>
                 </div>
-                <div class="n__card">
-                    <h1>02</h1>
-                    <h3>17 YILLIK <br> TAJRIBA <img src="../assets/img/olov.svg" class="fire" alt=""></h3>
-                </div>
-                <div class="n__card">
-                    <h1>03</h1>
-                    <h3>HIGH <br> SPEED <img src="../assets/img/fire.svg" class="fire" alt=""></h3>
-                </div>
-                <div class="n__card">
-                    <h1>04</h1>
-                    <h3>HIGH <br> SPEED <img src="../assets/img/fire.svg" class="fire" alt=""></h3>
-                </div>
-            </div>
-        </header>
+            </header>
+        </div>
     </div>
     <div class="fixed__bg">
         <div class="about__us aos-init aos-animate" data-aos="fade-up">
             <h1 id="about">ABOUT US</h1>
-            <img src="../assets/img/airtop.png" alt="">
+            <img src="assets/img/airtop.png" alt="">
         </div>
     </div>
 
     <div class="consult aos-init aos-animate" data-aos="fade-up">
-        <div class="container">
+        <div class="containerch">
             <div class="item__consult">
                 <div class="img__consult">
-                    <img src="../assets/img/muzaffer.png" alt="">
+                    <img src="assets/img/muzaffer.png" alt="">
                     <h1>MUZAFFAR TO‘XTASINOV </h1>
                     <span>CEO</span>
                 </div>
@@ -177,13 +207,15 @@
         </div>
     </div>
     <div class="arein" id="numbers">
-        <div class="container">
+        <div class="containerch">
             <div class="top__arein aos-init aos-animate" data-aos="fade-up">
                 <h1>
-                    <span>WE</span><br>
+                    <span>
+                        <h1>WE</h1>
+                    </span>
                     ARE IN <br>
                     <span>NUMBERS</span>
-                    <img src="../assets/img/gold.png" alt="">
+                    <img src="assets/img/gold.png" alt="">
                 </h1>
                 <div class="statistics">
                     <div class="item__stat">
@@ -201,14 +233,17 @@
                     <div class="item__stat">
                         <span>countries</span>
                         <h2>200+</h2>
+                        <a href="https://t.me/TDSfamily">
+                            <img src="./assets/img/telgram.png" alt="">
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="servis">
-        <div class="container aos-init aos-animate" data-aos="fade-up" id="service">
-            <h1>Explore our sevices.</h1>
+        <div class="containerch aos-init aos-animate" data-aos="fade-up" id="service">
+            <h1>Explore our sevices<span class="red" style="font-size: 3vw;">.</span></h1>
             <span></span>
             <span>There are many variations of passages of Lorem Ipsum available, There are many variations of passages
                 of Lorem Ipsum available, </span>
@@ -219,76 +254,84 @@
                     <ul class="splide__list">
 
                         <li class="splide__slide">
-                            <div class="card__slide">
-                                <img src="../assets/img/samol.png" alt="">
-                                <div class="none__sec">
-                                    <h2>
-                                        Air Freight
-                                    </h2>
-                                    <p>It is a long established fact that a reader will be distracted by the
-                                        It is a long established fact that a reader will be distracted by th
-                                        readable content of a page when looking at its layout.</p>
-                                </div>
-                                <div class="tex__slide">
+                            <a href="./pages/1.html">
+                                <div class="card__slide">
+                                    <img src="assets/img/samol.png" alt="">
+                                    <div class="none__sec">
+                                        <h2>
+                                            Air Freight
+                                        </h2>
+                                        <p>It is a long established fact that a reader will be distracted by the
+                                            It is a long established fact that a reader will be distracted by th
+                                            readable content of a page when looking at its layout.</p>
+                                    </div>
+                                    <div class="tex__slide">
 
-                                    <img src="../assets/img/toright.svg" alt="">
-                                    <h1>Land transport</h1>
+                                        <img src="assets/img/toright.svg" alt="">
+                                        <h1>Land transport</h1>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                         <li class="splide__slide">
-                            <div class="card__slide">
-                                <img src="../assets/img/krant.png" alt="">
-                                <div class="none__sec">
-                                    <h2>
-                                        Air Freight
-                                    </h2>
-                                    <p>It is a long established fact that a reader will be distracted by the
-                                        It is a long established fact that a reader will be distracted by th
-                                        readable content of a page when looking at its layout.</p>
-                                </div>
-                                <div class="tex__slide">
+                            <a href="./pages/1.html">
+                                <div class="card__slide">
+                                    <img src="assets/img/krant.png" alt="">
+                                    <div class="none__sec">
+                                        <h2>
+                                            Air Freight
+                                        </h2>
+                                        <p>It is a long established fact that a reader will be distracted by the
+                                            It is a long established fact that a reader will be distracted by th
+                                            readable content of a page when looking at its layout.</p>
+                                    </div>
+                                    <div class="tex__slide">
 
-                                    <img src="../assets/img/toright.svg" alt="">
-                                    <h1>Land transport</h1>
+                                        <img src="assets/img/toright.svg" alt="">
+                                        <h1>Land transport</h1>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                         <li class="splide__slide">
-                            <div class="card__slide">
-                                <img src="../assets/img/poyez.png" alt="">
-                                <div class="none__sec">
-                                    <h2>
-                                        Air Freight
-                                    </h2>
-                                    <p>It is a long established fact that a reader will be distracted by the
-                                        It is a long established fact that a reader will be distracted by th
-                                        readable content of a page when looking at its layout.</p>
-                                </div>
-                                <div class="tex__slide">
+                            <a href="./pages/1.html">
+                                <div class="card__slide">
+                                    <img src="assets/img/poyez.png" alt="">
+                                    <div class="none__sec">
+                                        <h2>
+                                            Air Freight
+                                        </h2>
+                                        <p>It is a long established fact that a reader will be distracted by the
+                                            It is a long established fact that a reader will be distracted by th
+                                            readable content of a page when looking at its layout.</p>
+                                    </div>
+                                    <div class="tex__slide">
 
-                                    <img src="../assets/img/toright.svg" alt="">
-                                    <h1>Land transport</h1>
+                                        <img src="assets/img/toright.svg" alt="">
+                                        <h1>Land transport</h1>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                         <li class="splide__slide">
-                            <div class="card__slide">
-                                <img src="../assets/img/fura.png" alt="">
-                                <div class="none__sec">
-                                    <h2>
-                                        Air Freight
-                                    </h2>
-                                    <p>It is a long established fact that a reader will be distracted by the
-                                        It is a long established fact that a reader will be distracted by th
-                                        readable content of a page when looking at its layout.</p>
-                                </div>
-                                <div class="tex__slide">
+                            <a href="./pages/1.html">
+                                <div class="card__slide">
+                                    <img src="assets/img/fura.png" alt="">
+                                    <div class="none__sec">
+                                        <h2>
+                                            Air Freight
+                                        </h2>
+                                        <p>It is a long established fact that a reader will be distracted by the
+                                            It is a long established fact that a reader will be distracted by th
+                                            readable content of a page when looking at its layout.</p>
+                                    </div>
+                                    <div class="tex__slide">
 
-                                    <img src="../assets/img/toright.svg" alt="">
-                                    <h1>Land transport</h1>
+                                        <img src="assets/img/toright.svg" alt="">
+                                        <h1>Land transport</h1>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -296,16 +339,20 @@
         </div>
     </div>
     <div class="icons">
-        <div class="container">
-            <div class="item__icons grid">
-                <span></span>
-                <img src="../assets/img/icon1.svg" alt="">
-                <span></span>
-                <img src="../assets/img/icon2.svg" alt="">
-                <img src="../assets/img/icon3.svg" alt="">
-                <img src="../assets/img/icon4.svg" alt="">
-                <span></span>
-                <img src="../assets/img/icon5.svg" alt="">
+        <div class="containerch">
+            <div class="">
+                <div class="item__icons grid">
+                    <span></span>
+                    <img src="assets/img/icon1.svg" alt="">
+                    <span></span>
+                    <img src="assets/img/icon2.svg" alt="">
+                    <img src="assets/img/icon3.svg" alt="">
+                    <img src="assets/img/icon4.svg" alt="">
+                    <span></span>
+                    <img src="assets/img/icon5.svg" alt="">
+                </div>
+
+                <iframe src="./3d.html" width="700" height="500" frameborder="0"></iframe>
             </div>
             <div class="txt">
                 <h1>Some of our clients.</h1>
@@ -316,7 +363,9 @@
         </div>
     </div>
     <div class="testi" id="reviews">
-        <h1>TESTIMONIALS.</h1>
+        <h1>TESTIMONIALS<span class="red">
+                .
+            </span></h1>
         <div class="slider__testi aos-init aos-animate" data-aos="fade-up">
             <div class="splide2">
                 <div class="splide__track">
@@ -331,7 +380,27 @@
                                     making it look like readable English.
                                 </p>
                                 <div class="profile">
-                                    <img src="../assets/img/profile.png" alt="">
+                                    <img src="assets/img/profile.png" alt="">
+                                    <article>
+                                        <h3>
+                                            Pedro Ibanez
+                                        </h3>
+                                        <p>
+                                            CEO SOME COMP
+                                        </p>
+                                    </article>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class="card__about">
+                                <p>
+                                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
+                                    letters, as opposed to using 'Content here, content here', making it look like
+
+                                </p>
+                                <div class="profile">
+                                    <img src="assets/img/profile.png" alt="">
                                     <article>
                                         <h3>
                                             Pedro Ibanez
@@ -353,7 +422,7 @@
                                     making it look like readable English.
                                 </p>
                                 <div class="profile">
-                                    <img src="../assets/img/profile.png" alt="">
+                                    <img src="assets/img/profile.png" alt="">
                                     <article>
                                         <h3>
                                             Pedro Ibanez
@@ -375,7 +444,7 @@
                                     making it look like readable English.
                                 </p>
                                 <div class="profile">
-                                    <img src="../assets/img/profile.png" alt="">
+                                    <img src="assets/img/profile.png" alt="">
                                     <article>
                                         <h3>
                                             Pedro Ibanez
@@ -397,7 +466,7 @@
                                     making it look like readable English.
                                 </p>
                                 <div class="profile">
-                                    <img src="../assets/img/profile.png" alt="">
+                                    <img src="assets/img/profile.png" alt="">
                                     <article>
                                         <h3>
                                             Pedro Ibanez
@@ -419,7 +488,7 @@
                                     making it look like readable English.
                                 </p>
                                 <div class="profile">
-                                    <img src="../assets/img/profile.png" alt="">
+                                    <img src="assets/img/profile.png" alt="">
                                     <article>
                                         <h3>
                                             Pedro Ibanez
@@ -441,7 +510,7 @@
                                     making it look like readable English.
                                 </p>
                                 <div class="profile">
-                                    <img src="../assets/img/profile.png" alt="">
+                                    <img src="assets/img/profile.png" alt="">
                                     <article>
                                         <h3>
                                             Pedro Ibanez
@@ -463,7 +532,7 @@
                                     making it look like readable English.
                                 </p>
                                 <div class="profile">
-                                    <img src="../assets/img/profile.png" alt="">
+                                    <img src="assets/img/profile.png" alt="">
                                     <article>
                                         <h3>
                                             Pedro Ibanez
@@ -485,7 +554,7 @@
                                     making it look like readable English.
                                 </p>
                                 <div class="profile">
-                                    <img src="../assets/img/profile.png" alt="">
+                                    <img src="assets/img/profile.png" alt="">
                                     <article>
                                         <h3>
                                             Pedro Ibanez
@@ -507,7 +576,7 @@
                                     making it look like readable English.
                                 </p>
                                 <div class="profile">
-                                    <img src="../assets/img/profile.png" alt="">
+                                    <img src="assets/img/profile.png" alt="">
                                     <article>
                                         <h3>
                                             Pedro Ibanez
@@ -529,29 +598,7 @@
                                     making it look like readable English.
                                 </p>
                                 <div class="profile">
-                                    <img src="../assets/img/profile.png" alt="">
-                                    <article>
-                                        <h3>
-                                            Pedro Ibanez
-                                        </h3>
-                                        <p>
-                                            CEO SOME COMP
-                                        </p>
-                                    </article>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="splide__slide">
-                            <div class="card__about">
-                                <p>
-                                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
-                                    letters, as opposed to using 'Content here, content here', making it look like
-                                    readable English. The point of using Lorem Ipsum is that it has a more-or-less
-                                    normal distribution of letters, as opposed to using 'Content here, content here',
-                                    making it look like readable English.
-                                </p>
-                                <div class="profile">
-                                    <img src="../assets/img/profile.png" alt="">
+                                    <img src="assets/img/profile.png" alt="">
                                     <article>
                                         <h3>
                                             Pedro Ibanez
@@ -570,7 +617,7 @@
     </div>
 
     <div class="contact">
-        <div class="container">
+        <div class="containerch">
             <h1>
                 CONTACT
             </h1>
@@ -582,21 +629,21 @@
         </div>
         <div class="red__box">
             <form>
-                <h2>Always happy to answer <img src="../assets/img/smile.svg" alt=""></h2>
+                <h2>Always happy to answer <img src="assets/img/smile.svg" alt=""></h2>
                 <div class="row">
                     <div class="input__tr" id="contact">
                         <label for="Name">Name</label>
-                        <input type="text" id="name">
+                        <input type="text" id="b_name">
                     </div>
                     <div class="input__tr">
                         <label for="E-MAIL">E-MAIL</label>
-                        <input type="text" id="email">
+                        <input type="text" id="b_email">
                     </div>
                 </div>
                 <div class="input__tr">
                     <label for="E-MAIL">Message</label>
-                    <textarea name="" id="message" cols="30" rows="10"></textarea>
-                    <button type="button" onclick="sendRequest()" class="btn">
+                    <textarea name="" id="b_message" cols="30" rows="10"></textarea>
+                    <button type="button" onclick=" mysubmit2()" class="btn">
                         Xabar yuborish
                     </button>
                 </div>
@@ -604,9 +651,21 @@
         </div>
     </div>
     <footer>
-        <div class="container">
+        <div class="containerch">
             <div class="logo">
-                <img src="../assets/img/logo.svg" alt="">
+                <img src="assets/img/logo.png" alt="">
+                <div class="row">
+                    <a href="#">
+                        <img src="assets/img/Instagram (filled).svg" alt="">
+                    </a>
+
+                    <a href="#">
+                        <img src="assets/img/YouTube.svg" alt="">
+                    </a>
+                    <a href="#">
+                        <img src="assets/img/Facebook.svg" alt="">
+                    </a>
+                </div>
             </div>
             <div class="right__footer">
                 <div class="item__footer">
@@ -667,6 +726,21 @@
             </div>
         </div>
     </footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+
+    <script src="dist/js/bootstrap-select-country.min.js"></script>
+    <script src="https://raw.githubusercontent.com/micku7zu/vanilla-tilt.js/master/dist/vanilla-tilt.js"></script>
+    <script>
+
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -674,6 +748,12 @@
                 perPage: 3,
                 perMove: 3,
                 type: 'loop',
+                breakpoints: {
+                    640: {
+                        perMove: 1,
+                        perPage: 1,
+                    },
+                },
 
             });
             splide.mount();
@@ -681,8 +761,15 @@
         document.addEventListener('DOMContentLoaded', function () {
             var splide = new Splide('.splide2', {
                 perPage: 3,
-                perMove: 3,
+                perMove: 1,
+                breakpoints: {
+                    640: {
+                        perMove: 1,
+                        perPage: 1,
+                    },
+                },
                 type: 'loop',
+
             });
             splide.mount();
         });
@@ -691,7 +778,16 @@
     <script>
         AOS.init();
     </script>
-    <script src="../assets/css/main.js"></script>
+    <script src="assets/css/main.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+
+    <script>
+        console.log(document.querySelector("#from [value=CN]"));
+        document.querySelector("#from [value=CN]").setAttribute('selected', true)
+        document.querySelector("#to [value=UZ]").setAttribute('selected', true)
+    </script>
+
 </body>
 
 </html>

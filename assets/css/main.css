@@ -1351,7 +1351,7 @@ footer .row img {
 }
 
 iframe {
-  height: 500px;
+  height: 20vw;
   width: 100%;
   position: relative;
   z-index: 999;
